@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block search_bar %}
+    <div class="search_bar clearfix">
+        <a href="{% url 'plat:index' %}" class="logo fl"><img src="{% static 'images/logo.png' %}"></a>
+	</div>
+{% endblock search_bar %}

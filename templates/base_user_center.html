@@ -1,0 +1,17 @@
+{% extends 'base_no_cart.html' %}
+{% block tittle %}iship船舶图片收集网站{% endblock tittle %}
+{% block page_tittle %}用户中心{% endblock page_tittle %}
+{% block body %}
+    	<div class="main_con clearfix">
+		<div class="left_menu_con clearfix">
+			<h3>用户中心</h3>
+			<ul>
+				<li><a href="{% url 'user:user' %}" {% if page == 'user' %} class="active"{% endif %}>· 个人信息</a></li>
+				<li><a href="{% url 'user:change' %}"{% if page == 'change' %} class="active"{% endif %}>· 修改信息</a></li>
+			</ul>
+		</div>
+        {% block right_content %}{% endblock right_content %}
+        </div>
+{% endblock body %}
+
+{# 用户中心父模板 #}

@@ -1,0 +1,37 @@
+{% extends 'base_user_center.html' %}
+{% block right_content %}
+<div class="right_content clearfix">
+				<div class="info_con clearfix">
+				<h3 class="common_title2">修改密码或邮箱</h3>
+						<ul class="user_info_list">
+                            <form  method="post">
+                                <div class="form_group3">
+							<li><span>用户名：</span>{{user.username}}</li>
+                        </div></br>
+                        {% csrf_token %}
+                                <div class="form_group3">
+							<li><span>原密码：</span></li>
+							<input type="password" name="orcode">
+                        </div></br>
+						<div class="form_group3">
+							<li><span>新密码：</span></li>
+							<input type="password" placeholder="密码长度必须大于7位小于21位" name="code">
+                        </div></br>
+                        <div class="form_group3">
+							<li><span>重复新密码：</span></li>
+							<input type="password" placeholder="密码长度必须大于7位小于21位" name="code1">
+						</div></br>
+                        <div class="form_group3">
+							<li><span>邮箱：</span></li>
+							<input type="text" value="{{ user.email }}" name="email">
+						</div>
+						<input type="submit" name="" value="提交" class="info_submit">
+					    </form>
+                        </ul>
+
+
+				</div>
+{{ errmsg }}
+		</div>
+{% endblock right_content %}
+

@@ -1,0 +1,17 @@
+{% extends 'base_user_center.html' %}
+{% load staticfiles %}
+{% block right_content %}
+<div class="right_content clearfix">
+				<div class="info_con clearfix">
+				<h3 class="common_title2">基本信息</h3>
+						<ul class="user_info_list">
+							<li><span>用户名：</span>{{user.username}}</li>
+                            <li><span>账号状态：</span>{% if user.is_active == 1 %}已激活{% else %}未激活{% endif %}</li>
+                            <li><span>邮箱：</span>{{user.email}}</li>
+                            <li><span>注册日期：</span>{{user.create_time}}</li>
+                            <li><span>最后登录：</span>{{user.last_login}}</li>
+                            <li><span>身份：</span>{% if user.authority == 2 %}普通用户{% elif  user.authority == 1 %}管理员{% else %}审查员{% endif %}</li>
+                        </ul>
+				</div>
+		</div>
+{% endblock right_content %}
